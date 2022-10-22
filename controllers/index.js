@@ -2,6 +2,27 @@ const FS = require('../firebase')
 const {db}=FS
 
 const createMovie = async(req, res)=>{
+    /*  #swagger.parameters['obj'] = {
+                in: 'body',
+                description: 'Structure of movie to be created. This doesn\'t need to have an id yet as the db will be generating it for us',
+                schema: {
+                    $name: 'Avatar',
+                    $author: 'James Cameron',
+                    time: ['20:00', '22:00'],
+                    rating: 5.00
+                }
+        }
+        #swagger.responses[200] = {
+                description: 'Movie successfully obtained.',
+                schema: { $ref: '#/definitions/Movie' }
+        }
+        #swagger.responses[500] = {
+                description: 'Error.',
+                schema: { $ref: '#/definitions/GenericError' }
+        }
+        #swagger.produces = ['application/json']
+        #swagger.consumes = ['application/json']
+        */
     try {
         const {body:movie}=req //Alias al body llamada movie
         const moviesDb = db.collection('movies')
